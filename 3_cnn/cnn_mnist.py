@@ -10,8 +10,6 @@ from keras import backend as K
 if K.image_data_format() == 'channels_first':
     X_train = X_train.reshape(X_train.shape[0], 1, 28, 28)/255
     X_test = X_test.reshape(X_test.shape[0], 1, 28, 28)/255
-    data_train_x = data_train_x.reshape(data_train_x.shape[0], 1, img_rows, img_cols)
-    data_test = data_test.reshape(data_test.shape[0], 1, img_rows, img_cols)
     input_shape = (1, 28, 28)
 else:
     X_train = X_train.reshape(X_train.shape[0], 28, 28, 1)/255
